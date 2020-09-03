@@ -2,24 +2,19 @@ import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
+import './Auth.scss';
+
 class Auth extends React.Component {
   loginClickEvent = (e) => {
     e.preventDefault();
-    const googleProvider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(googleProvider);
-  }
-
-  logoutClickEvent = (e) => {
-    e.preventDefault();
-    firebase.auth().signOut();
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider);
   }
 
   render() {
-    const { authed } = this.props;
-
     return (
       <div className="Auth">
-        <button className="btn btn-danger" onClick={authed ? this.logoutClickEvent : this.loginClickEvent}>{authed ? 'Log Out' : 'Google Log In'}</button>
+        <button className=" login btn btn-info" onClick={this.loginClickEvent}><i class="fab fa-google fa-2x"></i>oogle login</button>
       </div>
     );
   }
