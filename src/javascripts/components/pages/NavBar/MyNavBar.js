@@ -5,11 +5,9 @@ import Auth from '../Auth/Auth';
 class Navbar extends React.Component {
   render() {
     return (
-      <div className="Navbar">
-        <nav className="navbar navbar-light bg-light justify-content-between">
-          <h4 className="navbar-brand">React Hoarder</h4>
-            <Auth authed={this.props.authed}/>
-        </nav>
+      <div className="MyNavbar">
+        <h1>My Navbar</h1>
+        <button className="btn btn-danger" onClick={this.logMeOut}>Logout</button>
       </div>
     );
   }
