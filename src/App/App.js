@@ -17,6 +17,7 @@ import Stuff from '../javascripts/components/pages/Stuff/Stuff';
 import NewStuff from '../javascripts/components/pages/Stuff/New';
 import Edit from '../javascripts/components/pages/Stuff/Edit';
 import Auth from '../javascripts/components/pages/Auth/Auth';
+import Single from '../javascripts/components/pages/Stuff/Single';
 
 fbConnection();
 
@@ -64,6 +65,7 @@ class App extends React.Component {
                 <PrivateRoute path="/stuff" component={Stuff} authed={authed}/>
                 <PrivateRoute path="/edit/:itemId" component={Edit} authed={authed}/>
                 <PrivateRoute path="/new" component={NewStuff} authed={authed}/>
+                <PrivateRoute path="/single/:itemId" component={Single} authed={authed}/>
                 <PublicRoute path="/auth" component={Auth} authed={authed}/>
                 <Redirect from="*" to="/home" />
               </Switch>
